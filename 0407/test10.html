@@ -8,16 +8,20 @@
   <script>
     'use strict';
     function fCheck() {
-      let mid = document.myForm.mid.value;
-      let pwd = document.myForm.pwd.value;
+      // let mid = document.myForm.mid.value;
+      // let pwd = document.myForm.pwd.value;
+      let mid = document.getElementById("mid").value;
+      let pwd = document.getElementById("pwd").value;
 
       if(mid == "") {
         alert("아이디를 입력하세요.");
-        document.myForm.mid.focus();
+        //document.myForm.mid.focus();
+        document.getElementById("mid").focus();
       }
       else if(pwd == "") {
         alert("비밀번호를 입력하세요.");
-        document.myForm.pwd.focus();
+        //document.myForm.pwd.focus();
+        document.getElementById("pwd").focus();
       }
       else {
         alert("아이디는? " + mid + "\n비밀번호는 ?" + pwd);
@@ -28,9 +32,14 @@
 </head>
 <body>
   <!-- <form method="get" action="ddd.html"> -->
-  <form name="myForm" method="post" action="#">
-    <p>아이디 : <input type="text" name="mid" /></p>
-    <p>비밀번호 : <input type="password" name="pwd" size="3" maxlength="6"/></p>
+  <!-- <form name="myForm" method="post" action="#"> -->
+  <form>
+    <p>
+      <label for="mid">아이디</label> :
+      <input type="text" name="mid" id="mid" /></p>
+    <p>
+      <label for="pwd">비밀번호</label> : 
+      <input type="password" name="pwd" id="pwd" size="3" maxlength="6"/></p>
     <p>
       <input type="submit" value="전송" />
       <input type="reset" value="취소" />
