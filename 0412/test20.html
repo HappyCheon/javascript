@@ -25,12 +25,11 @@
     }
 
     // numPoint위치:0123456
-    // 쉼표표시 함수(1234567 => 1,1234,567)      123
+    // 쉼표표시 함수(1234567 => 1,1234,567)
     function comma(num) {
       let numLen, numPoint, numStr;
 
       numLen = num.length;
-      numStr = num + "";
       numPoint = numLen % 3;
 
       numStr = num.substring(0, numPoint);
@@ -58,6 +57,12 @@
     function numberWithCommas(num) {
       return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
+
+    // 숫자만 추출하기(콤마제거하기)
+    function commaOutput() {
+      let str = document.getElementById("demo").innerText;
+      document.getElementById("demo2").innerHTML = str.replace(/[^\d]+/g, '');
+    }
   </script>
 </head>
 <body>
@@ -74,11 +79,15 @@
     <div class="form-group m-2">
       <input type="button" value="쉼표넣기" onclick="commaInput()" class="form-control m-1 p-2 btn btn-success"/>
       <input type="button" value="정규식쉼표넣기" onclick="commaInput2()" class="form-control m-1 p-2 btn btn-success"/>
+      <input type="button" value="정규식쉼표빼기" onclick="commaOutput()" class="form-control m-1 p-2 btn btn-success"/>
       <input type="button" value="클리어" onclick="location.reload()" class="form-control m-1 p-2 btn btn-success"/>
     </div>
   </form>
   <br/>
-  <div id="demo"></div>
+  <h2>
+    <div id="demo"></div>
+    <font color="red"><div id="demo2"></div></font>
+  </h2>
 </div>
 </body>
 </html>
