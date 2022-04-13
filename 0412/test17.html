@@ -33,14 +33,18 @@
       else if(event.ctrlKey)
         handled = true;
 
-      // 방향키(→:37, ←:39, ↑:38, ↓:40)
+      // 방향키(←:37, ↑:38, →:39, ↓:40)
       else if(event.keyCode >= 37 && event.keyCode <= 40)
         handled = true;
       
       if (handled) {
         console.log(event.keyCode);
+        alert("방향키/Shift/Alt/Ctrl/Backspace/숫자키는 사용할 수 없습니다.");
           
         event.preventDefault();
+      }
+      else {
+        document.getElementById("demo").innerHTML = event.keyCode;
       }
     }, true);
   </script>
@@ -48,6 +52,7 @@
 <body>
   <h2>키보드 키값 확인</h2>
   <p>키보드를 누르면 키값이 표시됩니다.</p>
+  <p>방향키/Shift/Alt/Ctrl/Backspace/숫자키는 사용할 수 없습니다.</p>
   <p><input type="button" value="새로고침" onclick="location.reload"/></p>
   <div id="demo"></div>
 </body>
