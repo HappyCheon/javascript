@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test5.html</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(function(){
+      //$('button[name="moveRight"]').click(function(){});
+      $('#moveRight').click(function(){
+        $('#img1').animate({marginLeft:"200px", width:"100px",height:"100px"}, // css속성
+          500,  // 지연시간
+          "linear", // 빠른정도(easing)
+          function(){
+            $(this).css("border",'1px solid red');
+          }
+        );
+      });
+      $('#moveLeft').click(function(){
+        $('#img1').animate({marginLeft:"0px", width:"100px",height:"100px"}, // css속성
+          500,  // 지연시간
+          "linear", // 빠른정도(easing)
+          function(){
+            $(this).css("border",'1px solid red');
+          }
+        );
+      });
+    });
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>Animation 연습</h2>
+  <hr/>
+  <button type="button" name="moveLeft" id="moveLeft"><=왼쪽이동</button>
+  <button type="button" name="moveRight" id="moveRight">오른쪽이동=></button>
+  <p><br/></p>
+  <div>
+    <img src="../../images/1.jpg" id="img1" width="100px" height="100px"/>
+  </div>
+
+</div>
+<p><br/></p>
+</body>
+</html>

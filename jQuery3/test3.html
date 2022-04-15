@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test3.html</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    'use strict';
+    $(function(){
+      $('button[name="btn1"]').click(function(){
+        $('#box1').css("backgroundColor",'red').fadeIn();
+        $('#box2').css("backgroundColor",'green').fadeIn("slow");
+        $('#box3').css("backgroundColor",'blue').fadeIn(2000);
+      });
+      $('button[name="btn2"]').click(function(){
+        $('#box1').css("backgroundColor",'red').fadeOut();
+        $('#box2').css("backgroundColor",'green').fadeOut("slow");
+        $('#box3').css("backgroundColor",'blue').fadeOut(2000);
+      });
+      $('button[name="btn3"]').click(function(){
+        $('#box1').css("backgroundColor",'red').fadeToggle();
+        $('#box2').css("backgroundColor",'green').fadeToggle("slow");
+        $('#box3').css("backgroundColor",'blue').fadeToggle(2000);
+      });
+      $('button[name="btn4"]').click(function(){
+        $('#box1').css("backgroundColor",'red').stop().fadeToggle();
+        $('#box2').css("backgroundColor",'green').stop().fadeToggle("slow");
+        $('#box3').css("backgroundColor",'blue').stop().fadeToggle(2000);
+      });
+    });
+  </script>
+  <style>
+    .boxTest {
+      width: 100px;
+      height: 100px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>fadeIn/fadeOut</h2>
+  <button name="btn1">fadeIn</button>
+  <button name="btn2">fadeOut</button>
+  <button name="btn3">fadeToggle</button>
+  <button name="btn4">fadeToggleStop</button>
+  <br/><br/>
+  <div>
+    <div id="box1" class="boxTest"></div>
+    <div id="box2" class="boxTest"></div>
+    <div id="box3" class="boxTest"></div>
+  </div>
+  <h2>이곳은 본문...</h2>
+</div>
+<p><br/></p>
+</body>
+</html>
