@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test1.html</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(function(){
+      // 활성화버튼
+      $('#btn1').click(function(){
+        $('input[type="text"]').attr('disabled', false);
+        $('input[type="password"]').attr('disabled', false);
+      });
+
+      // 비활성화버튼
+      $('#btn2').click(function(){
+        $('input[type="text"]').attr('disabled', 'disabled');
+        $('input[type="password"]').attr('disabled', 'disabled');
+      });
+
+      // 활성화/비활성화버튼
+      $('#btn3').click(function(){
+        let flag = $('input[type="text"]');
+        let flagPwd = $('input[type="password"]');
+        if(flag.is(':enabled') && flagPwd.is(':enabled')) {
+          flag.attr('disabled', 'disabled');
+          flagPwd.attr('disabled', 'disabled');
+        }
+        else {
+          flag.attr('disabled', false);
+          flagPwd.attr('disabled', false);
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <div>
+    아이디 :
+    <input type="text" name="mid" id="mid" value="hkd1234" class="form-control"/><br/>
+    비밀번호 :
+    <input type="password" name="pwd" id="pwd" value="1234567890" class="form-control"/><br/>
+    성명 : 
+    <input type="text" name="name" id="name" value="홍길동" class="form-control"/><br/>
+    <button id="btn1" class="btn btn-success">활성화</button>
+    <button id="btn2" class="btn btn-success">비활성화</button>
+    <button id="btn3" class="btn btn-success">활성화/비활성화</button>
+  </div>
+</div>
+<p><br/></p>
+</body>
+</html>

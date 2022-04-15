@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test1.html</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(function(){
+      $('h3 a').hover(
+        function(){
+          $("#toolTip").slideDown();
+        },
+        function(){
+          $("#toolTip").slideUp();
+        }
+      )
+      .mousemove(function(e){
+        $("#toolTip").css({left:e.pageX+0+"px",top:e.pageY+20+"px"});
+      });
+    });
+  </script>
+  <style>
+    #toolTip {
+      display: none;
+      position: absolute;
+      background-color: beige;
+    }
+  </style>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>툴팁(풍선도움말)</h2>
+  <h3><a href="#">jquery란</a> 무엇입니까???</h3>
+  <span id="toolTip">Javascript 라이브러리 입니다.</span>
+</div>
+<p><br/></p>
+</body>
+</html>
